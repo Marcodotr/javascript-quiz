@@ -1,0 +1,53 @@
+:root {
+--color1: rgb(63, 5, 63);
+--color2: rgb(236, 144, 144);
+--color3: rgb(177, 233, 250);
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: var(--color3);
+}
+
+header {
+    padding: 20px;
+    margin: 10px;
+}
+
+#question {
+    padding: 30px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#answer {
+    margin: 30px;
+}
+
+section button {
+    padding: 20px;
+    margin: 30px;
+    font-size: larger;
+}
+
+#report {
+    margin: 30px;
+    font-size: xx-large;
+    color: var(--color1);
+}
+
+#nextbtn {
+    margin: 30px;
+    font-size: x-large;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: var(--color2);
+
+}
+
+#initials-list {
+    list-style-type: none;
+}
