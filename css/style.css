@@ -1,7 +1,7 @@
 :root {
 --color1: rgb(63, 5, 63);
 --color2: rgb(236, 144, 144);
---color3: rgb(177, 233, 250);
+--color3: beige
 }
 
 body {
@@ -50,4 +50,15 @@ button:hover {
 
 #initials-list {
     list-style-type: none;
+}
+
+#timer {
+    text-align: right;
+}
+#title {
+    font-size: x-large;
+    padding: 30px;
+}
+#score {
+    text-align: left;
 }
