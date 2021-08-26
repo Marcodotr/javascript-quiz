@@ -29,7 +29,6 @@ function startGame() {
     if (seconds <= 0) clearInterval(countdown);
     }, 1000);
     setTimeout(function() {
-    displaytrue()
     disable();},60000)
 
 }
@@ -38,29 +37,96 @@ startE1.on('click',startGame)
 var i = 0;
 var answerbtn = $('.answerbtn')
 
-answerbtn.on('click',cycle)
+
 var score = 0;
-function cycle() {
+
+buttonE1.on('click',cycleE1)
+buttonE2.on('click',cycleE2)
+buttonE3.on('click',cycleE3)
+buttonE4.on('click',cycleE4)
+
+
+
+function cycleE1() {
     console.log('hello')
-    var clickedbtn = document.getElementById('answer1').clicked == true
-    console.log(clickedbtn)
-    if(answerbtn.clicked(true).text() == QandA[0].actual[i]){
-        $('#score').html(`Score: ${score++}`)
+    if(buttonE1.text() == QandA[0].actual[i]) {
+        console.log('this far')
+        score++;
+        $('#score').html(`Score: ${score}`)
         i++
         next(i)
         console.log('check')
-    }else{
+    } else {
         i++
         next(i)
     }
 }
+
+function cycleE2() {
+    console.log('hello')
+    if(buttonE2.text() == QandA[0].actual[i]) {
+        console.log('this far')
+        score++;
+        $('#score').html(`Score: ${score}`)
+        i++
+        next(i)
+        console.log('check')
+    } else {
+        i++
+        next(i)
+    }
+}
+
+function cycleE3() {
+    console.log('hello')
+    if(buttonE3.text() == QandA[0].actual[i]) {
+        console.log('this far')
+        score++;
+        $('#score').html(`Score: ${score}`)
+        i++
+        next(i)
+        console.log('check')
+    } else {
+        i++
+        next(i)
+    }
+}
+
+function cycleE4() {
+    console.log('hello')
+    if(buttonE4.text() == QandA[0].actual[i]) {
+        console.log('this far')
+        score++;
+        $('#score').html(`Score: ${score}`)
+        i++
+        next(i)
+        console.log('check')
+    } else {
+        i++
+        next(i)
+    }
+}
+
 function next(){
     questionE1.text(QandA[0].question[i]);
     buttonE1.text(QandA[0].answer1[i]);
     buttonE2.text(QandA[0].answer2[i]);
     buttonE3.text(QandA[0].answer3[i]);
-    buttonE4.text(QandA[0].answer4[i]);
-    
+    buttonE4.text(QandA[0].answer4[i]);    
 }
+function disable(){
+    document.getElementById('answer1').disabled = true
+    document.getElementById('answer2').disabled = true
+    document.getElementById('answer3').disabled = true
+    document.getElementById('answer4').disabled = true
+}
+
+function endGame() {
+    console.log('yo')
+    var initials = $('<li>').text($('#hightscore-input').innerhtml)
+    console.log(initials)
+    $('#initials-list').append(initials.text())
+}
+$('#addbtn').on('click',endGame)
 
 
