@@ -62,3 +62,11 @@ button:hover {
 #score {
     text-align: left;
 }
+ 
+#high {
+    display: none;
+}
+
+#gameCont{
+    display: none;
+}

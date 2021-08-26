@@ -24,11 +24,16 @@ function startGame() {
  buttonE2.text(QandA[0].answer2[0]);
  buttonE3.text(QandA[0].answer3[0]);
  buttonE4.text(QandA[0].answer4[0]);
+ var start = document.getElementById('start')
+ start.style.display = 'none'
+ var gameCont = document.getElementById('gameCont')
+ gameCont.style.display = 'block'
  var seconds = 60, countdown = setInterval(function() {
     $('#timer').html(`Timer: ${seconds--}`) 
     if (seconds <= 0) clearInterval(countdown);
     }, 1000);
     setTimeout(function() {
+    displayHigh()
     disable();},60000)
 
 }
@@ -123,10 +128,17 @@ function disable(){
 
 function endGame() {
     console.log('yo')
-    var initials = $('<li>').text($('#hightscore-input').innerhtml)
-    console.log(initials)
-    $('#initials-list').append(initials.text())
+    var initials = $('<li>').text($('#highscore-input').val())
+    console.log($('.highscore-input').val())
+    $('#initials-list').append(`${initials.text()}:  ${score}`)
+    var high = document.getElementById('high')
+    high.style.display = "block"
 }
 $('#addbtn').on('click',endGame)
+
+function displayHigh() {
+    var high = document.getElementById('high')
+    high.style.display = "block"
+}
 
 
